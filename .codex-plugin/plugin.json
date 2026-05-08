@@ -1,0 +1,38 @@
+{
+  "name": "devbrother-skills",
+  "version": "0.1.0",
+  "description": "DevBrother agent skills for clarifying requirements before planning or execution.",
+  "author": {
+    "name": "DevBrother",
+    "url": "https://github.com/devbrother2024"
+  },
+  "homepage": "https://github.com/devbrother2024/skills",
+  "repository": "https://github.com/devbrother2024/skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "requirements",
+    "interview",
+    "prompting",
+    "agent-workflow"
+  ],
+  "skills": "./deep-interview",
+  "interface": {
+    "displayName": "DevBrother Skills",
+    "shortDescription": "Interview-first skills for clearer AI agent work.",
+    "longDescription": "A small collection of DevBrother agent skills. The first skill, deep-interview, makes the agent clarify goals, scope, constraints, and done criteria before planning or implementation.",
+    "developerName": "DevBrother",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/devbrother2024/skills",
+    "defaultPrompt": [
+      "Use deep-interview to clarify this rough idea.",
+      "Before planning, interview me with /deep-interview.",
+      "Turn this vague request into clear requirements."
+    ],
+    "brandColor": "#F97316"
+  }
+}
