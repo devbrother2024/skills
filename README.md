@@ -2,6 +2,12 @@
 
 개발동생이 실제 작업 흐름에서 사용하는 AI agent skills 공유 저장소입니다.
 
+<p>
+  <a href="#cursor">
+    <img alt="Cursor 연동" src="https://img.shields.io/badge/Cursor-Install%20Skill-111827?style=for-the-badge" />
+  </a>
+</p>
+
 ## Quickstart
 
 가장 쉬운 설치 방법은 `skills` CLI를 사용하는 것입니다.
@@ -20,6 +26,9 @@ npx skills@latest add devbrother2024/skills --skill deep-interview --agent codex
 
 # Claude Code 전역 설치
 npx skills@latest add devbrother2024/skills --skill deep-interview --agent claude-code --global --yes
+
+# Cursor 전역 설치
+npx skills@latest add devbrother2024/skills --skill deep-interview --agent cursor --global --yes
 
 # 설치하지 않고 사용 가능한 스킬만 확인
 npx skills@latest add devbrother2024/skills --list
@@ -45,6 +54,27 @@ codex
 ```bash
 codex plugin marketplace upgrade devbrother-skills
 ```
+
+## Cursor
+
+Cursor는 Agent Skills를 `SKILL.md` 기반으로 로드합니다. 가장 빠른 설치 방법은 `skills` CLI를 사용하는 것입니다.
+
+```bash
+# Cursor 전역 설치
+npx skills@latest add devbrother2024/skills --skill deep-interview --agent cursor --global --yes
+
+# 현재 프로젝트에 설치
+npx skills@latest add devbrother2024/skills --skill deep-interview --agent cursor --yes
+```
+
+설치 후 Cursor Settings → Rules에서 `deep-interview`가 Agent Decides 섹션에 보이는지 확인하세요. Agent chat에서는 `/deep-interview`로 직접 호출할 수 있습니다.
+
+Cursor 앱 안에서 GitHub 원격 스킬로 추가하려면 아래 순서로 진행합니다.
+
+1. Cursor Settings → Rules를 엽니다.
+2. Project Rules 섹션에서 Add Rule을 선택합니다.
+3. Remote Rule (Github)을 선택합니다.
+4. `https://github.com/devbrother2024/skills`를 입력합니다.
 
 ## Skills
 
@@ -115,6 +145,20 @@ Claude Code 프로젝트 설치:
 ```bash
 mkdir -p .claude/skills
 cp -R deep-interview .claude/skills/deep-interview
+```
+
+Cursor 전역 설치:
+
+```bash
+mkdir -p ~/.cursor/skills
+cp -R deep-interview ~/.cursor/skills/deep-interview
+```
+
+Cursor 프로젝트 설치:
+
+```bash
+mkdir -p .cursor/skills
+cp -R deep-interview .cursor/skills/deep-interview
 ```
 
 ## Repository Structure
