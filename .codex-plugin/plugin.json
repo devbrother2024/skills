@@ -1,7 +1,7 @@
 {
   "name": "devbrother-skills",
   "version": "0.1.1",
-  "description": "DevBrother agent skills for clarifying requirements before planning or execution.",
+  "description": "DevBrother agent skills for clarifying requirements and generating AGENTS.md governance systems.",
   "author": {
     "name": "DevBrother",
     "url": "https://github.com/devbrother2024"
@@ -12,26 +12,30 @@
   "keywords": [
     "codex",
     "skills",
+    "agents-md",
+    "agents",
+    "governance",
     "requirements",
     "interview",
     "prompting",
     "agent-workflow"
   ],
-  "skills": "./deep-interview",
+  "skills": "./",
   "interface": {
     "displayName": "개발동생 Skills",
-    "shortDescription": "Interview-first skills for clearer AI agent work.",
-    "longDescription": "A small collection of DevBrother agent skills. deep-interview makes the agent clarify goals, scope, constraints, and done criteria before planning or implementation.",
+    "shortDescription": "Skills for clearer AI agent work and project rules.",
+    "longDescription": "A small collection of DevBrother agent skills. deep-interview clarifies goals, scope, constraints, and done criteria before implementation. agents-md generates an AGENTS.md governance system and links CLAUDE.md for Claude Code compatibility.",
     "developerName": "DevBrother",
     "category": "Productivity",
     "capabilities": [
-      "Interactive"
+      "Interactive",
+      "Write"
     ],
     "websiteURL": "https://github.com/devbrother2024/skills",
     "defaultPrompt": [
       "Use deep-interview to clarify this rough idea.",
-      "Before planning, interview me with /deep-interview.",
-      "Turn this vague request into clear requirements."
+      "Generate AGENTS.md project rules with agents-md.",
+      "Set up agent governance for this repository."
     ],
     "brandColor": "#F97316"
   }

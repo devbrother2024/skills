@@ -1,6 +1,7 @@
 {
   "name": "개발동생-skills",
   "skills": [
-    "./deep-interview"
+    "./deep-interview",
+    "./agents-md"
   ]
 }
