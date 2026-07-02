@@ -1,6 +1,6 @@
 {
   "name": "devbrother-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DevBrother agent skills for clarifying requirements and generating AGENTS.md governance systems.",
   "author": {
     "name": "DevBrother",
