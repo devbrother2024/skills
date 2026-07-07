@@ -6,11 +6,11 @@
 
 | Skill | 설명 |
 | --- | --- |
-| [`deep-interview`](deep-interview/SKILL.md) | 실행 전에 AI가 사용자를 한 번에 하나씩 인터뷰해 목표·범위·제약·완료 기준을 구체화 |
-| [`agents-md`](agents-md/SKILL.md) | 프로젝트를 분석해 `AGENTS.md` 거버넌스 시스템을 생성하고 `CLAUDE.md`에 링크 연결 |
-| [`autofix`](autofix/SKILL.md) | PR 리뷰 코멘트를 실제 코드와 대조해 검증한 뒤 타당한 지적만 승인 하에 반영 |
-| [`advisor-strategy`](advisor-strategy/SKILL.md) | 지정한 상위 모델을 Advisor로 세워 결정점에서 컨설트 (명시 호출 전용) |
-| [`artifact-design`](artifact-design/SKILL.md) | self-contained HTML 산출물의 팔레트·타이포그래피·레이아웃을 의도적으로 설계 |
+| [`deep-interview`](deep-interview/SKILL.md) | 바로 실행하는 대신 AI가 먼저 한 번에 하나씩 질문해서, 흐릿한 요청을 목표와 범위, 완료 기준이 잡힌 요구사항으로 만들어 줍니다 |
+| [`agents-md`](agents-md/SKILL.md) | 프로젝트를 분석해서 `AGENTS.md` 규칙 체계를 만들어 주고, Claude Code도 같은 규칙을 읽도록 `CLAUDE.md`에 연결합니다 |
+| [`autofix`](autofix/SKILL.md) | 쌓인 PR 리뷰 코멘트를 실제 코드와 대조해 보고, 타당한 지적만 골라 승인받아 반영합니다 |
+| [`advisor-strategy`](advisor-strategy/SKILL.md) | 막히거나 중요한 결정을 앞뒀을 때, 지정한 상위 모델에게 세컨드 오피니언을 받아 옵니다 (`/advisor-strategy`로만 호출) |
+| [`artifact-design`](artifact-design/SKILL.md) | HTML 산출물을 만들 때 팔레트와 타이포그래피, 레이아웃을 먼저 설계해서 AI 티가 나는 템플릿 디자인을 피합니다 |
 
 각 스킬의 전체 문서는 링크된 `SKILL.md`에 있습니다.
 
