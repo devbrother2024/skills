@@ -4,7 +4,7 @@ description: |
   사용자가 지정한 상위 모델을 Advisor로 세워 현재 작업의 결정점에서 컨설트한다.
   접근 확정 전 검토, 완료 선언 전 검증, 막힘 진단에 쓴다. 브리프 작성, 상위 모델 자문, 조언 반영 순서로 진행한다.
   advisor 모델은 디폴트 없이 호출 시 사용자가 직접 지정하며, 미지정이면 동작하지 않는다.
-  사용자가 /advisor-strategy로 호출한 경우에만 실행한다 (자동 발동 미지원 하네스에서도 이 규칙을 지켜라).
+  사용자가 /advisor-strategy로 호출한 경우에만 실행한다.
 argument-hint: "<advisor 모델: 현재 하네스의 동급 이상 모델 (예: Claude는 fable|opus|sonnet, Codex는 gpt-5.5|gpt-5.4 등)> [질문·주제]"
 disable-model-invocation: true
 ---
