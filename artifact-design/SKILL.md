@@ -1,80 +1,80 @@
 ---
 name: artifact-design
-description: >
-  Design guidance for building polished, self-contained HTML deliverables — landing
-  pages, documents, dashboards, demos, games, reports — with a deliberate palette,
-  typography, and layout, and for avoiding templated, AI-looking design. Load this
-  BEFORE writing the HTML/CSS for any visual deliverable, and calibrate the treatment
-  to what the task actually calls for. 트리거: "랜딩 만들어줘", "이 문서/페이지 보기 좋게",
-  "대시보드 UI 짜줘", "HTML로 예쁘게 만들어줘", "디자인 잡아줘", 또는 웹 페이지·화면·컴포넌트·
-  시각 산출물을 만드는 요청. 순수 백엔드/로직/CLI 작업, 텍스트만 필요한 작업에는 쓰지 않는다.
+description: |
+  랜딩 페이지·문서·대시보드·데모·게임 등 self-contained HTML 산출물을 만들 때
+  팔레트·타이포그래피·레이아웃을 의도적으로 설계하고, 템플릿·AI스러운 디자인을
+  피하도록 돕는 디자인 가이드. HTML/CSS를 쓰기 전에 로드해, 작업이 실제로 요구하는
+  treatment에 맞춰 설계한다. "랜딩 만들어줘", "이 문서/페이지 보기 좋게",
+  "대시보드 UI 짜줘", "HTML로 예쁘게 만들어줘", "디자인 잡아줘", 또는 웹 페이지·화면·
+  컴포넌트·시각 산출물을 만드는 요청에 활성화한다. 순수 백엔드·로직·CLI 작업이나
+  텍스트만 필요한 작업에는 사용하지 않는다.
 ---
 
 # Artifact Design
 
-Approach this as the design lead at a small studio known for their versatility, giving every client a visual identity pitched at the treatment the task actually calls for. Make deliberate choices about palette, typography, and layout that are specific to this subject, and avoid templated designs.
+다재다능함으로 알려진 작은 스튜디오의 디자인 리드처럼 접근한다. 모든 클라이언트에게 그 작업이 실제로 요구하는 수준(treatment)에 맞춘 시각적 아이덴티티를 준다. 팔레트·타이포그래피·레이아웃을 이 주제에 특화된 방식으로 의도적으로 선택하고, 템플릿 같은 디자인을 피한다.
 
-## Output & environment
+## 산출물과 환경
 
-The deliverable is a **self-contained `.html` file on disk** (inline the CSS and JS; embed assets as `data:` URIs). There is no hosting layer that renders it for you, so keep the file portable — it should open correctly from a plain `file://` path or a static server. Preview and visual checks follow your normal browser-verification workflow; this skill governs the design of the file, not how it is served.
+산출물은 디스크에 저장되는 **self-contained `.html` 파일**이다 (CSS·JS는 인라인하고, 에셋은 `data:` URI로 임베드한다). 파일을 대신 렌더링해 주는 호스팅 레이어가 없으므로 이식성을 유지하라 — 순수 `file://` 경로나 정적 서버에서 그대로 열려야 한다. 미리보기와 시각 확인은 평소의 브라우저 검증 워크플로우를 따른다. 이 스킬은 파일이 어떻게 서빙되는지가 아니라 파일의 디자인을 다룬다.
 
-## Read the request first
+## 요청을 먼저 읽어라
 
-Calibrate treatment, not whether to design. A doc deserves the same craft as a landing page — what changes is the treatment that craft is delivered in.
+디자인을 할지 말지가 아니라 treatment를 조정하는 문제다. 문서도 랜딩 페이지와 같은 수준의 craft를 받을 자격이 있다 — 바뀌는 것은 그 craft가 전달되는 treatment다.
 
-Many requests call for a more utilitarian treatment: a plan, a memo, a demo. Make it polished: include real typographic hierarchy, considered spacing, and a proper palette, but avoid over-designing. Most pages do not need a flashy, gigantic hero. Keep flourishes tasteful and limited.
+많은 요청은 더 실용적인 treatment를 요구한다: 계획서, 메모, 데모. 다듬어라 — 실제 타이포그래피 위계, 신중한 간격, 제대로 된 팔레트를 담되, 과하게 디자인하지 마라. 대부분의 페이지에는 화려하고 거대한 히어로가 필요 없다. 장식은 절제하고 제한적으로 유지하라.
 
-Some requests call for an editorial treatment: a landing page, a game, an app or tool they'll keep or share.
+일부 요청은 에디토리얼 treatment를 요구한다: 랜딩 페이지, 게임, 오래 쓰거나 공유할 앱·도구.
 
-When unsure: a well-composed page is never the wrong answer; an over-designed visual identity sometimes is.
+애매할 때: 잘 구성된 페이지는 결코 틀린 답이 아니지만, 과하게 디자인된 시각 아이덴티티는 때때로 틀린 답이다.
 
-Fundamentals below apply to everything. The editorial process after that runs only when the read above says so.
+아래 fundamentals는 모든 것에 적용된다. 그 뒤의 에디토리얼 프로세스는 위 판단이 그렇게 말할 때만 실행한다.
 
-## Fundamentals for every artifact
+## 모든 산출물에 적용되는 fundamentals
 
-**Honor what's already there** Look for an existing design system first — AGENTS.md, CLAUDE.md, a tokens or theme file, existing component styles. When one exists, apply it; everything below fills gaps and never overrides. Precedence is always: the user's own words, then the project's existing system, then your choices.
+**이미 있는 것을 존중하라** 먼저 기존 디자인 시스템을 찾아라 — AGENTS.md, CLAUDE.md, 토큰·테마 파일, 기존 컴포넌트 스타일. 존재하면 그것을 적용한다. 아래 내용은 빈틈을 메울 뿐 절대 덮어쓰지 않는다. 우선순위는 항상: 사용자의 말, 그다음 프로젝트의 기존 시스템, 그다음 너의 선택.
 
-**Ground it in the subject.** If the subject isn't already clear, pin it: one concrete subject, its audience, and the page's single job. The subject's own world — its materials, instruments, vernacular — is where distinctive choices come from. Build with real content throughout, never lorem.
+**주제에 뿌리내려라.** 주제가 아직 명확하지 않으면 못박아라: 하나의 구체적인 주제, 그 청중, 그리고 페이지의 단 하나의 역할. 주제 고유의 세계 — 그 재료, 도구, 어휘 — 가 차별적인 선택이 나오는 곳이다. 처음부터 끝까지 실제 콘텐츠로 만들고, 절대 lorem을 쓰지 마라.
 
-**Pair typefaces** Typography carries the page even when the page isn't about typography. A self-contained file can't rely on a font CDN — a linked webfont URL risks a silent fallback (and breaks offline). Instead inline the face as a `@font-face` `data:` URI, or use a well-chosen system-font stack deliberately. Keep running text near 65 characters wide; set a type scale and stay on it; give headings `text-wrap: balance`, body text room to breathe, and uppercase labels a touch of letter-spacing.
+**서체를 짝지어라** 타이포그래피는 페이지가 타이포그래피에 관한 것이 아닐 때조차 페이지를 지탱한다. self-contained 파일은 폰트 CDN에 의존할 수 없다 — 링크한 웹폰트 URL은 조용한 폴백을 유발하고(오프라인에서 깨진다). 대신 서체를 `@font-face` `data:` URI로 인라인하거나, 잘 고른 시스템 폰트 스택을 의도적으로 사용하라. 본문은 한 줄 약 65자 폭을 유지하고, 타입 스케일을 정해 거기서 벗어나지 마라. 제목에는 `text-wrap: balance`, 본문에는 숨 쉴 여백, 대문자 라벨에는 약간의 자간(letter-spacing)을 준다.
 
-**Choose neutrals, don't default to them.** A pure mid-grey reads as unconsidered; a grey with a slight hue bias toward the page's accent reads as chosen. Pure white and near-black are fine grounds when they suit the subject — the point is that the neutral was picked, not inherited.
+**뉴트럴을 기본값으로 두지 말고 골라라.** 순수한 중간 회색은 고민 없이 쓴 것처럼 읽힌다. 페이지 액센트 쪽으로 살짝 색조를 기울인 회색은 의도적으로 고른 것처럼 읽힌다. 순수한 흰색과 거의 검은색도 주제에 맞으면 좋은 바탕이다 — 핵심은 뉴트럴이 물려받은 게 아니라 선택되었다는 점이다.
 
-**Design both themes.** Respect the viewer's OS preference through `prefers-color-scheme`. The robust pattern is token-level: define the palette as custom properties on `:root`, then redefine only the tokens under `@media (prefers-color-scheme: dark)` — style components through the tokens, never directly inside the media query. If you add your own light/dark toggle, stamp `data-theme="dark"` / `data-theme="light"` on the root element and let `:root[data-theme="…"]` override the media query in both directions. Give the second theme the same care as the first — don't naively invert; keep contrast legible and the accent working on both grounds. A design that deliberately commits to one visual world (a neon arcade screen, a letterpress invitation) may stay single-theme — make it a choice, not an omission.
+**두 테마를 모두 디자인하라.** 뷰어의 OS 선호를 `prefers-color-scheme`로 존중하라. 견고한 패턴은 토큰 레벨이다: 팔레트를 `:root`의 커스텀 프로퍼티로 정의하고, `@media (prefers-color-scheme: dark)` 아래에서는 토큰만 재정의한다 — 컴포넌트는 미디어 쿼리 안에서 직접이 아니라 토큰을 통해 스타일링한다. 자체 라이트/다크 토글을 추가한다면 루트 엘리먼트에 `data-theme="dark"` / `data-theme="light"`를 찍고, `:root[data-theme="…"]`가 양방향 모두에서 미디어 쿼리를 덮게 하라. 두 번째 테마에도 첫 번째와 같은 정성을 들여라 — 단순 반전은 금지. 대비를 읽히게 유지하고 액센트가 양쪽 바탕에서 작동하게 하라. 하나의 시각 세계에 의도적으로 전념하는 디자인(네온 아케이드 화면, 활판 인쇄 초대장)은 단일 테마로 남아도 된다 — 누락이 아니라 선택이 되게 하라.
 
-**Let layout do the spacing.** Lay out sibling groups with flex or grid and `gap`, not per-element margins that silently collapse or double. Wide content — tables, code, diagrams — gets `overflow-x: auto` on its own container so the page body never scrolls sideways. Reach for `font-variant-numeric: tabular-nums` wherever digits line up in columns.
+**간격은 레이아웃이 하게 하라.** 형제 그룹은 조용히 무너지거나 두 배가 되는 요소별 마진이 아니라 flex나 grid의 `gap`으로 배치하라. 넓은 콘텐츠 — 표, 코드, 다이어그램 — 는 자체 컨테이너에 `overflow-x: auto`를 줘서 페이지 본문이 절대 가로로 스크롤되지 않게 하라. 숫자가 열로 정렬되는 곳에는 `font-variant-numeric: tabular-nums`를 써라.
 
-**Avoid AI-generated design** AI-generated design currently clusters around a few looks: warm cream (#F4F1EA) with a serif display and terracotta accent; near-black with a lone acid-green or vermilion pop; broadsheet hairline rules with dense columns; a purple-to-blue gradient hero on white; Inter or Space Grotesk as the "safe" face; emoji as section markers; everything centered; `rounded-lg` everywhere; accent bar/rail on rounded cards. Where the user pins down a visual direction, follow it exactly — their words always win, including when they ask for one of these looks. Where nothing is specified, don't spend that freedom on one of these defaults.
+**AI가 생성한 티가 나는 디자인을 피하라** 현재 AI 생성 디자인은 몇 가지 룩으로 몰린다: 세리프 디스플레이 + 테라코타 액센트의 따뜻한 크림색(#F4F1EA); 애시드 그린이나 버밀리언 하나만 튀는 거의 검은 배경; 조밀한 단의 브로드시트 헤어라인 룰; 흰 바탕의 보라→파랑 그라디언트 히어로; '안전한' 서체로서의 Inter나 Space Grotesk; 섹션 마커로 쓰는 이모지; 모든 것이 가운데 정렬; 어디에나 `rounded-lg`; 둥근 카드의 액센트 바/레일. 사용자가 시각 방향을 못박으면 정확히 따르라 — 그들의 말이 항상 이긴다. 그 룩 중 하나를 요구할 때조차 그렇다. 아무것도 지정되지 않았다면, 그 자유를 이런 기본값 중 하나에 쓰지 마라.
 
-**Build cleanly** Be cognizant of overlapping elements, cascade collisions, silent font fallbacks; visual bugs hide in the gap between source and output. Close every non-void element, double-quote attributes, give keyboard focus a visible state, respect `prefers-reduced-motion`. For generative or decorative graphics, reach for Canvas or WebGL rather than hand-authoring long SVG path data.
+**깨끗하게 만들어라** 겹치는 요소, 캐스케이드 충돌, 조용한 폰트 폴백을 경계하라. 시각 버그는 소스와 출력 사이의 틈에 숨는다. 모든 비-void 엘리먼트를 닫고, 어트리뷰트는 큰따옴표로 감싸고, 키보드 포커스에 보이는 상태를 주고, `prefers-reduced-motion`을 존중하라. 생성적·장식적 그래픽은 긴 SVG path 데이터를 손으로 쓰기보다 Canvas나 WebGL을 택하라.
 
-**CSS rules** When writing the CSS, watch your selector specificities. It is easy to generate classes that cancel each other out — a type-based selector like `.section` fighting an element-based one like `.cta` over padding and margins between sections. Structure the cascade so it doesn't silently undo your spacing.
+**CSS 규칙** CSS를 쓸 때 셀렉터 specificity를 주의하라. 서로를 상쇄하는 클래스를 만들기 쉽다 — 섹션 간 패딩·마진을 두고 타입 기반 셀렉터 `.section`이 엘리먼트 기반 `.cta`와 싸우는 식이다. 캐스케이드를 구조화해 간격을 조용히 되돌리지 않게 하라.
 
-**Writing the copy** Words are design material, not decoration. Write from the user's side of the screen — name things by what people recognize, not how the system is built (a person manages *notifications*, not *webhook config*). Active voice; a control says exactly what happens ("Publish", then a toast that says "Published"). Errors explain what went wrong and how to fix it — no apologies, no vagueness. Specific beats clever.
+**카피 작성** 단어는 장식이 아니라 디자인 재료다. 화면의 사용자 쪽에서 써라 — 시스템이 어떻게 만들어졌는지가 아니라 사람이 알아보는 이름으로 부르라(사람은 *webhook config*가 아니라 *알림*을 관리한다). 능동태로 쓰고, 컨트롤은 무슨 일이 일어나는지 정확히 말한다("게시", 그다음 "게시됨" 토스트). 에러는 무엇이 잘못됐고 어떻게 고치는지 설명한다 — 사과도, 모호함도 없이. 구체적인 것이 영리한 것을 이긴다.
 
-**Structure is information** Structural devices, numbering, eyebrows, dividers, labels, should encode something true about the content, not decorate it. Many generic designs use numbered markers (01 / 02 / 03), but that's only appropriate if the content actually is a sequence - like a real process or a typed timeline where order carries information the reader needs. Question if choices like numbered markers actually make sense before incorporating them.
+**구조는 정보다** 구조적 장치, 번호, 아이브로우(eyebrow), 구분선, 라벨은 콘텐츠를 장식하는 게 아니라 콘텐츠에 관한 참인 무언가를 인코딩해야 한다. 많은 평범한 디자인이 번호 마커(01 / 02 / 03)를 쓰지만, 그것이 적절한 경우는 콘텐츠가 실제로 시퀀스일 때뿐이다 — 순서가 독자에게 필요한 정보를 담는 실제 프로세스나 타임라인처럼. 번호 마커 같은 선택이 정말로 말이 되는지 넣기 전에 따져보라.
 
-**When it's a UI, not a document** A dashboard or tool is scanned and operated, not read top-to-bottom, so the craft shifts from typography to information design. Surface the summary before the detail; encode state in form as well as number — a pill, a chip, a severity stripe — so what needs attention reads at a glance. Semantic color (good / warning / critical) is separate from the accent hue and doesn't count as your accent. Give sparklines and charts the same care as type: an area fill, a faint grid, an emphasized endpoint. What's interactive should look interactive.
+**문서가 아니라 UI일 때** 대시보드나 도구는 위에서 아래로 읽는 게 아니라 훑고 조작하는 것이므로, craft가 타이포그래피에서 정보 설계로 옮겨간다. 세부보다 요약을 먼저 드러내라. 상태를 숫자만이 아니라 형태로도 인코딩하라 — pill, chip, severity 스트라이프 — 그래서 주의가 필요한 것이 한눈에 읽히게 하라. 시맨틱 컬러(good / warning / critical)는 액센트 색조와 별개이며 액센트로 치지 않는다. 스파크라인과 차트에도 타입만큼의 정성을 줘라: 영역 채움, 옅은 그리드, 강조된 끝점. 인터랙티브한 것은 인터랙티브해 보여야 한다.
 
-## Process
+## 프로세스
 
-Before writing code, sketch a short design plan — a compact token system with color, type, and layout:
-- **Color**: describe the palette as 4–6 named hex values.
-- **Type**: typefaces for 2+ roles — a characterful display face used with restraint, a complementary body face, and a utility face for captions or data if needed.
-- **Layout**: a layout concept in one or two sentences.
+코드를 쓰기 전에 짧은 디자인 계획을 스케치하라 — 색·타입·레이아웃으로 이뤄진 간결한 토큰 시스템:
+- **색(Color)**: 팔레트를 4~6개의 이름 붙인 hex 값으로 기술한다.
+- **타입(Type)**: 2개 이상 역할의 서체 — 절제해서 쓰는 개성 있는 디스플레이 페이스, 이를 보완하는 본문 페이스, 필요하면 캡션·데이터용 유틸리티 페이스.
+- **레이아웃(Layout)**: 한두 문장의 레이아웃 컨셉.
 
-Then build, following the plan and deriving every color and type decision from it.
+그다음 계획을 따라 만들고, 모든 색과 타입 결정을 거기서 도출한다.
 
-## When the request is editorial
+## 요청이 에디토리얼일 때
 
-The stance shifts: the client has already rejected proposals that felt templated, and is paying for a distinctive point of view. Make opinionated calls, and take one real aesthetic risk where it serves the work.
+태도가 바뀐다: 클라이언트는 이미 템플릿 같았던 제안들을 거절했고, 차별적인 관점에 값을 치르고 있다. 소신 있는 결정을 내리고, 작업에 도움이 되는 곳에서 진짜 미적 리스크를 하나 감수하라.
 
-Review the design plan against the subject before building: if any part of it reads like the generic default you would produce for any similar page, revise that part, and note what you changed and why. Only after you've confirmed the plan's uniqueness do you write the code, following the revised plan exactly.
+만들기 전에 디자인 계획을 주제에 비춰 검토하라: 어떤 부분이 비슷한 페이지 아무거나에 내놓을 법한 평범한 기본값처럼 읽히면 그 부분을 고치고, 무엇을 왜 바꿨는지 적어라. 계획의 고유함을 확인한 뒤에야 코드를 쓰고, 수정된 계획을 정확히 따른다.
 
-**Principles**
+**원칙**
 
-- The hero is a thesis: open with the most characteristic thing in the subject's world — headline, image, live demo, interactive moment.
-- Typography carries the personality of the page. Pair the display and body faces deliberately, not the same families you would reach for on any other project, and set a clear type scale with intentional weights, widths, and spacing. Make the type treatment itself a memorable part of the design, not a neutral delivery vehicle for the content.
-- Leverage motion deliberately. Think about where and if animation can serve the subject: a page-load sequence, a scroll-triggered reveal, hover micro-interactions, ambient atmosphere. An orchestrated moment usually lands harder than scattered effects; choose what the direction calls for. However, sometimes less is more, and extra animation contributes to the feeling that the design is AI-generated.
-- Match complexity to the vision. Maximalist directions need elaborate execution; minimal directions need precision in spacing, type, and detail. Elegance is executing the chosen vision well.
-- Spend your boldness in one place; keep everything around it quiet. If the accent fights the ground, shift it toward analogous or drop saturation rather than replacing it.
+- 히어로는 하나의 주장이다: 주제 세계에서 가장 특징적인 것으로 시작하라 — 헤드라인, 이미지, 라이브 데모, 인터랙티브한 순간.
+- 타이포그래피가 페이지의 개성을 실어 나른다. 다른 프로젝트 아무 데나 쓸 법한 같은 패밀리가 아니라, 디스플레이와 본문 페이스를 의도적으로 짝짓고, 의도된 웨이트·폭·간격으로 명확한 타입 스케일을 잡아라. 타입 처리 자체를 콘텐츠의 중립적 전달 수단이 아니라 기억에 남는 디자인의 일부로 만들어라.
+- 모션을 의도적으로 활용하라. 애니메이션이 주제에 기여할 수 있는 지점이 어디인지, 있기는 한지 생각하라: 페이지 로드 시퀀스, 스크롤 트리거 리빌, 호버 마이크로 인터랙션, 앰비언트 분위기. 흩뿌린 효과보다 잘 짜인 하나의 순간이 대개 더 세게 꽂힌다. 방향이 요구하는 것을 골라라. 다만 때로는 적은 것이 더 낫고, 과한 애니메이션은 디자인이 AI가 생성한 것처럼 느껴지게 만든다.
+- 복잡도를 비전에 맞춰라. 맥시멀한 방향은 정교한 실행을 요구하고, 미니멀한 방향은 간격·타입·디테일의 정밀함을 요구한다. 우아함은 택한 비전을 잘 실행하는 것이다.
+- 대담함은 한 곳에만 쓰고, 그 주변은 전부 조용히 유지하라. 액센트가 바탕과 싸우면, 교체하기보다 유사색 쪽으로 옮기거나 채도를 낮춰라.
