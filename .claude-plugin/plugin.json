@@ -4,6 +4,7 @@
     "./deep-interview",
     "./agents-md",
     "./autofix",
-    "./advisor-strategy"
+    "./advisor-strategy",
+    "./artifact-design"
   ]
 }
