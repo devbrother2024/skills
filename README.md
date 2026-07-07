@@ -74,4 +74,4 @@ mkdir -p ~/.claude/skills && cp -R autofix ~/.claude/skills/autofix
 
 ## License
 
-MIT. 플러그인 메타데이터(`.claude-plugin/`, `.codex-plugin/`, `.agents/plugins/`)는 각 에이전트 marketplace 노출용입니다.
+MIT
