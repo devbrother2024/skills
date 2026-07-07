@@ -16,7 +16,7 @@ Advisor Strategy는 두 모델을 조합하는 에이전트 설계 패턴이다.
 
 ## 모델 페어링 규칙
 
-Advisor는 **executor보다 상위이거나 동급**이어야 한다 (Anthropic 공식 원칙. 동급끼리는 서로 advisor 가능 — 독립 세컨드 오피니언). 모델 버전별 허용 조합은 [공식 문서](https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool#model-compatibility)를 참조하라.
+Advisor는 **executor보다 상위이거나 동급**이어야 한다 (동급은 독립 세컨드 오피니언으로 유효). 허용 모델은 실행 하네스가 제공하는 모델 라인업 기준이며 특정 벤더에 한정되지 않는다. Claude 모델 간 허용 조합의 세부는 [공식 문서](https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool#model-compatibility)를 참조하라.
 
 **advisor 모델에 디폴트는 없다 — 호출할 때 사용자가 직접 지정하고, 미지정이면 컨설트를 진행하지 않는다.** 상위 모델 요율과 접근 권한(Fable 5는 조직 승인 필요)이 걸린 선택이므로 실행자가 임의로 고르지 않는다. 지정 모델이 executor보다 하위면 위 규칙 위반을 알리고 진행 여부를 확인한다. 동급 지정(예: Fable→Fable)이라도 별도 컨텍스트에서의 독립 검토는 가치가 있다.
 
@@ -26,7 +26,7 @@ Advisor는 **executor보다 상위이거나 동급**이어야 한다 (Anthropic 
 
 - executor의 히스토리가 자동 전달되지 않으므로 아래 **브리프 템플릿**을 반드시 채워 전달한다. 브리프 품질이 곧 조언 품질이다.
 - 대신 advisor가 **read-only 도구로 저장소를 직접 검증**할 수 있다 — 파일·diff·테스트 결과를 직접 확인하고 조언한다.
-- 특정 하네스에 묶이지 않는다 — 서브에이전트나 CLI를 띄울 수 있는 모든 에이전트에서 동작한다.
+- 특정 하네스에 묶이지 않는다 — 모델을 지정해 서브에이전트를 띄울 수 있는 모든 에이전트에서 동작한다.
 
 ## 컨설트 타이밍 규율
 
@@ -89,8 +89,8 @@ Anthropic이 실측 검증한 호출 규율이다.
 
 ## 하네스별 실행
 
-- **Claude Code**: 상위 모델 서브에이전트를 advisor로 스폰한다. 접근/설계 컨설트는 read-only 플래너형 에이전트, 완료 검증·막힘 진단은 범용 에이전트에 read-only 지시. 모델은 사용자가 지정한 값. 상세 실행은 같은 디렉토리의 `SKILL.md`.
-- **Codex 등 타 하네스**: Claude CLI 헤드리스 호출로 동일 절차 수행 — 브리프를 파일로 저장 후 `claude -p --model {사용자 지정 모델} "$(cat 브리프.md)"` (권한 없는 read-only 실행이 기본). CLI가 없으면 상위 모델 채팅 세션에 브리프를 수동 전달해도 절차는 동일하다.
+- **Claude Code**: Agent 도구로 상위 모델 서브에이전트를 스폰한다 (model 오버라이드). 접근/설계 컨설트는 read-only 플래너형 에이전트, 완료 검증·막힘 진단은 범용 에이전트에 read-only 지시. 상세 실행은 같은 디렉토리의 `SKILL.md`.
+- **Codex 등 타 하네스**: 그 하네스의 서브에이전트 스폰·모델 지정 기능으로 동일한 브리프와 계약을 전달한다. advisor 모델은 그 하네스에서 지정 가능한 동급 이상 모델이다 (예: Codex는 GPT 상위 모델). 외부 CLI 도구를 호출하는 방식이 아니다. 서브에이전트 메커니즘이 없으면 상위 모델 채팅 세션에 브리프를 수동 전달해도 절차는 동일하다.
 
 ## 참고 — Claude Code 네이티브 advisor 도구와의 관계
 
