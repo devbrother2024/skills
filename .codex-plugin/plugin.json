@@ -40,7 +40,6 @@
     "defaultPrompt": [
       "Use deep-interview to clarify this rough idea.",
       "Generate AGENTS.md project rules with agents-md.",
-      "Set up agent governance for this repository.",
       "Design a polished landing page with artifact-design."
     ],
     "brandColor": "#F97316"
