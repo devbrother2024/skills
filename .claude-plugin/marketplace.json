@@ -1,0 +1,14 @@
+{
+  "name": "devbrother-skills",
+  "owner": {
+    "name": "DevBrothers"
+  },
+  "plugins": [
+    {
+      "name": "devbrother-skills",
+      "source": "./",
+      "description": "개발동생이 실전 워크플로에서 검증한 에이전트 스킬 모음: deep-interview, agents-md, autofix, advisor-strategy, artifact-design"
+    }
+  ],
+  "description": "개발동생이 실전 워크플로에서 검증한 에이전트 스킬 marketplace"
+}

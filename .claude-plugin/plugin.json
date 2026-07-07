@@ -1,10 +1,16 @@
 {
-  "name": "개발동생-skills",
+  "name": "devbrother-skills",
   "skills": [
     "./deep-interview",
     "./agents-md",
     "./autofix",
     "./advisor-strategy",
     "./artifact-design"
-  ]
+  ],
+  "description": "개발동생이 실전 워크플로에서 검증한 에이전트 스킬 모음",
+  "version": "0.3.0",
+  "author": {
+    "name": "DevBrothers",
+    "url": "https://github.com/devbrother2024"
+  }
 }
