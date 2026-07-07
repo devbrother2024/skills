@@ -3,6 +3,8 @@
   "skills": [
     "./deep-interview",
     "./agents-md",
+    "./autofix",
+    "./advisor-strategy",
     "./artifact-design"
   ]
 }

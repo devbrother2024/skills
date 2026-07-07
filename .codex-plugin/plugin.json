@@ -1,7 +1,7 @@
 {
   "name": "devbrother-skills",
-  "version": "0.2.0",
-  "description": "DevBrother agent skills for clarifying requirements, generating AGENTS.md governance systems, and designing polished self-contained HTML deliverables.",
+  "version": "0.4.0",
+  "description": "DevBrother agent skills for clarifying requirements, generating AGENTS.md governance systems, verifying-then-applying PR review feedback, consulting a stronger advisor model at decision points, and designing polished self-contained HTML deliverables.",
   "author": {
     "name": "DevBrother",
     "url": "https://github.com/devbrother2024"
@@ -19,6 +19,14 @@
     "interview",
     "prompting",
     "agent-workflow",
+    "code-review",
+    "autofix",
+    "pull-request",
+    "review",
+    "advisor",
+    "second-opinion",
+    "model-pairing",
+    "consultation",
     "artifact-design",
     "html",
     "design",
@@ -28,8 +36,8 @@
   "skills": "./",
   "interface": {
     "displayName": "개발동생 Skills",
-    "shortDescription": "Skills for clearer AI agent work and project rules.",
-    "longDescription": "A small collection of DevBrother agent skills. deep-interview clarifies goals, scope, constraints, and done criteria before implementation. agents-md generates an AGENTS.md governance system and links CLAUDE.md for Claude Code compatibility. artifact-design guides deliberate palette, typography, and layout for polished, self-contained HTML deliverables while avoiding templated, AI-looking design.",
+    "shortDescription": "Skills for clearer AI agent work, project rules, PR review handling, decision-point advisor consults, and HTML deliverable design.",
+    "longDescription": "A small collection of DevBrother agent skills. deep-interview clarifies goals, scope, constraints, and done criteria before implementation. agents-md generates an AGENTS.md governance system and links CLAUDE.md for Claude Code compatibility. autofix fetches unresolved PR review threads from any reviewer (CodeRabbit, Codex cloud review, humans), verifies each comment against the actual code, and applies only validated fixes with approval or in --auto mode. advisor-strategy consults a user-specified stronger model as an advisor at decision points (before committing to an approach, before declaring done, and when stuck), returning advice only, with mandatory read-only verification of the brief. artifact-design guides deliberate palette, typography, and layout for polished, self-contained HTML deliverables while avoiding templated, AI-looking design.",
     "developerName": "DevBrother",
     "category": "Productivity",
     "capabilities": [
@@ -39,7 +47,7 @@
     "websiteURL": "https://github.com/devbrother2024/skills",
     "defaultPrompt": [
       "Use deep-interview to clarify this rough idea.",
-      "Generate AGENTS.md project rules with agents-md.",
+      "Verify and apply PR review comments with autofix.",
       "Design a polished landing page with artifact-design."
     ],
     "brandColor": "#F97316"
