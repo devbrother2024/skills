@@ -2,6 +2,7 @@
   "name": "개발동생-skills",
   "skills": [
     "./deep-interview",
-    "./agents-md"
+    "./agents-md",
+    "./autofix"
   ]
 }
