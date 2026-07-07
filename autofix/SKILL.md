@@ -2,7 +2,7 @@
 name: autofix
 description: |
   GitHub PR의 미해결 리뷰 스레드를 조회해 코멘트별로 타당성을 검증한 뒤, 적절한 지적만 골라 수정·커밋한다.
-  CodeRabbit 전용이 아니라 모든 리뷰어(CodeRabbit, Codex cloud review, 기타 봇, 사람 리뷰어)의 코멘트를 함께 처리한다.
+  모든 리뷰어(봇·사람)의 코멘트를 처리한다.
   "코드 리뷰 반영해줘", "리뷰 코멘트 처리해줘", "PR 리뷰 적용해줘", "autofix", "/autofix" 같은 요청에 활성화한다.
   리뷰 코멘트를 그대로 적용하지 않고, 검증에서 적절로 판정된 것만 사용자 승인(기본) 또는 자동(`--auto`)으로 반영한다.
 argument-hint: "[--auto]"
