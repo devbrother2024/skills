@@ -28,7 +28,7 @@ Advisor Strategy는 두 모델을 조합하는 에이전트 설계 패턴이다.
 
 ## 모델 페어링 규칙
 
-Advisor는 **executor보다 상위이거나 동급**이어야 한다 (동급은 독립 세컨드 오피니언으로 유효). 허용 모델은 실행 하네스가 제공하는 모델 라인업 기준이며 특정 벤더에 한정되지 않는다. Claude 모델 간 허용 조합의 세부는 [공식 문서](https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool#model-compatibility)를 참조하라.
+Advisor는 **executor보다 상위이거나 동급**이어야 한다 (동급은 독립 세컨드 오피니언으로 유효). 허용 모델은 실행 하네스가 제공하는 모델 라인업 기준이며 특정 벤더에 한정되지 않는다.
 
 **advisor 모델에 디폴트는 없다. 호출할 때 사용자가 직접 지정하고, 미지정이면 컨설트를 진행하지 않는다.** 상위 모델 요율과 접근 권한이 걸린 선택이므로 실행자가 임의로 고르지 않는다.
 
