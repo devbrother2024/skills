@@ -103,7 +103,7 @@ description: AGENTS.md 거버넌스 시스템을 분석·생성하는 마스터 
 
 ## Step 3: CLAUDE.md Linking (CRITICAL)
 
-여러 코딩 에이전트(Claude Code, Codex, Cursor 등)를 함께 사용하는 경우에도 규칙은 AGENTS.md 표준 하나로 관리합니다. 단, Claude Code는 `AGENTS.md`를 직접 인식하지 않으므로 **반드시 `CLAUDE.md`를 통해 연결**해야 합니다.
+Claude Code는 `AGENTS.md`를 직접 인식하지 않는다. **반드시 `CLAUDE.md`를 통해 연결**해야 한다.
 
 ### 3.1 루트 `./CLAUDE.md` 처리
 
