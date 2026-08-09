@@ -15,7 +15,7 @@ description: AGENTS.md 거버넌스 시스템을 분석·생성하는 마스터 
 3.  **Central Control & Delegation:** 루트 파일은 "관제탑"이며, 상세 구현은 하위 파일로 "위임"합니다.
 4.  **Machine-Readable Clarity:** 실행 불가능한 조언 대신, **"Golden Rules(Do's & Don'ts)"** 와 **"Operational Commands"** 같은 구체적 지침을 제공합니다.
 5.  **No Duplication:** README, docs/, 기존 문서에 이미 있는 내용을 반복하지 마십시오. AGENTS.md는 **기존 문서에 없는 에이전트 전용 지침만** 포함합니다. 중복은 에이전트의 불필요한 탐색을 유발하고 비용을 20% 이상 증가시킵니다.
-6.  **Evidence-Based, Not Guessed:** Golden Rules는 실제 코드에서 찾은 근거(파일·라인) 없이는 기록하지 마십시오. 근거를 대지 못하면 추측이지 발견이 아닙니다 — 그 항목은 버립니다.
+6.  **Evidence-Based:** Golden Rules는 실제 코드에서 확인한 근거(파일·라인)를 기반으로 작성합니다. 근거를 제시할 수 없는 항목은 작성하지 않습니다.
 
 # Execution Protocol (실행 절차)
 
@@ -40,12 +40,12 @@ description: AGENTS.md 거버넌스 시스템을 분석·생성하는 마스터 
 - **Golden Rules**
     - **Immutable:** 절대 타협할 수 없는 보안/아키텍처 제약.
     - **Do's & Don'ts:** "항상 공식 SDK를 사용하라", "API 키를 하드코딩하지 마라" 등 명확한 행동 수칙.
-    - **팀 고유 지식은 코드에서 직접 캔다:** 일반론을 지어내지 말고, 실제 코드에서 다음 5가지 신호를 찾아 **근거 파일·라인과 함께** Golden Rule로 옮긴다. 근거를 못 찾으면 그 항목은 넣지 않는다(Core Philosophy #6).
-        - **Asymmetry(비대칭):** 같은 층위인데 한쪽에만 있는 처리 (예: 한쪽 provider 경로에만 폴백이 있음) — 누군가 한 번 데였다는 뜻이다.
-        - **Test Boundary(테스트 경계):** 테스트가 있는 파일과 없는 파일의 경계 — 팀이 어디를 위험하다고 보는지 드러난다.
-        - **Hard Constraint(하드 제약):** 어기면 즉시 깨지는 프레임워크·런타임 제약 — 에이전트가 가장 자주 밟는 지뢰.
-        - **Double Defense(이중 방어):** 같은 위험을 두 곳 이상에서 막고 있는 지점 — 그중 하나를 지우면 재발한다.
-        - **Security Boundary(보안 경계):** 무엇이 절대 클라이언트로 나가면 안 되는가 — 문서화 안 하면 에이전트가 태연히 넘는다.
+    - **팀 고유 규칙 (코드 분석 기반):** 일반적인 수칙 대신, 실제 코드에서 다음 5가지 신호를 조사해 **근거 파일·라인과 함께** Golden Rule로 작성합니다. 근거가 없는 항목은 제외합니다(Core Philosophy #6).
+        - **Asymmetry(비대칭):** 같은 층위에서 한쪽 경로에만 존재하는 처리 (예: 특정 provider 경로에만 있는 폴백). 과거 장애를 겪고 수정한 흔적일 가능성이 높다.
+        - **Test Boundary(테스트 경계):** 테스트가 있는 파일과 없는 파일의 경계. 팀이 위험하다고 판단한 영역을 보여준다.
+        - **Hard Constraint(하드 제약):** 위반 시 즉시 동작이 깨지는 프레임워크·런타임 제약. 에이전트가 자주 위반하는 지점이다.
+        - **Double Defense(이중 방어):** 같은 위험을 두 곳 이상에서 막고 있는 지점. 한쪽을 제거하면 문제가 재발할 수 있다.
+        - **Security Boundary(보안 경계):** 클라이언트로 노출되면 안 되는 값과 그 경계. 명시하지 않으면 에이전트가 경계를 넘을 수 있다.
 - **Project Context (간결하게)**
     - 비즈니스 목표 1~2문장.
     - Tech Stack은 **나열만** (장황한 설명 금지).
@@ -86,7 +86,7 @@ description: AGENTS.md 거버넌스 시스템을 분석·생성하는 마스터 
 - **Tech Stack & Constraints:** 해당 폴더에서만 사용되는 라이브러리/버전 명시 (예: "여기서는 axios 대신 fetch만 사용").
 - **Implementation Patterns:** 자주 사용되는 코드 패턴, 보일러플레이트 경로, 파일 네이밍 규칙.
 - **Testing Strategy:** 해당 모듈 전용 테스트 명령어 및 테스트 작성 패턴.
-- **Local Golden Rules:** 해당 영역에서 범하기 쉬운 실수에 대한 **Do's & Don'ts**. Step 1의 5신호(비대칭·테스트 경계·하드 제약·이중 방어·보안 경계)를 이 디렉토리 스코프로 좁혀 다시 적용하고, 근거와 함께 채운다.
+- **Local Golden Rules:** 해당 영역에서 범하기 쉬운 실수에 대한 **Do's & Don'ts**. Step 1의 5가지 신호를 해당 디렉토리 범위로 좁혀 동일하게 조사하고, 근거와 함께 작성합니다.
 
 ### 2.3 Nested File Anti-Patterns (금지 사항)
 
@@ -97,13 +97,13 @@ description: AGENTS.md 거버넌스 시스템을 분석·생성하는 마스터 
 # Rules for Agent (Tool Usage)
 
 1.  **Direct Execution:** "파일을 만들까요?"라고 묻지 말고 **즉시 생성(Generate)** 하십시오.
-2.  **Overwrite Authority:** 기존 `AGENTS.md`가 있다면 이 베스트 프랙티스 구조로 **덮어쓰기(Overwrite)** 하십시오. 덮어쓸 때도 Golden Rules는 다시 코드를 조사해 최신 근거로 채웁니다 — 예전 근거를 그대로 복사하지 않습니다.
-3.  **Evidence or Silence:** 근거(파일·라인)를 대지 못하는 항목은 Golden Rules / Local Golden Rules에 넣지 마십시오. 추측성 규칙은 신뢰를 깎습니다.
+2.  **Overwrite Authority:** 기존 `AGENTS.md`가 있다면 이 베스트 프랙티스 구조로 **덮어쓰기(Overwrite)** 하십시오. 이때 Golden Rules는 기존 내용을 복사하지 말고 코드를 다시 조사해 최신 근거로 작성합니다.
+3.  **Evidence Required:** 근거(파일·라인)를 제시할 수 없는 항목은 Golden Rules / Local Golden Rules에 포함하지 마십시오.
 4.  **Markdown Only:** 생성되는 파일 내용은 유효한 Markdown 문법이어야 하며, 불필요한 설명 없이 코드 블록만 출력하십시오.
 
 ## Step 3: CLAUDE.md Linking (CRITICAL)
 
-Codex, Cursor 등 다른 코딩 에이전트를 함께 쓰더라도 규칙은 AGENTS.md라는 하나의 표준으로 수렴시킵니다. 단 Claude Code는 `AGENTS.md`를 직접 인식하지 않으므로 **반드시 `CLAUDE.md`를 통해 연결**해야 합니다.
+여러 코딩 에이전트(Claude Code, Codex, Cursor 등)를 함께 사용하는 경우에도 규칙은 AGENTS.md 표준 하나로 관리합니다. 단, Claude Code는 `AGENTS.md`를 직접 인식하지 않으므로 **반드시 `CLAUDE.md`를 통해 연결**해야 합니다.
 
 ### 3.1 루트 `./CLAUDE.md` 처리
 
@@ -132,4 +132,4 @@ Codex, Cursor 등 다른 코딩 에이전트를 함께 쓰더라도 규칙은 AG
 ---
 
 **Command:**
-Analyze the current project immediately and **EXECUTE the creation** of the optimized `./AGENTS.md` system. Golden Rules must be grounded in real code evidence (file · line) — do not invent generic best practices. For every `AGENTS.md` file created, ensure the corresponding `CLAUDE.md` links it via `@AGENTS.md`. Ensure **NO EMOJIS** are used to maximize context efficiency.
+Analyze the current project immediately and **EXECUTE the creation** of the optimized `./AGENTS.md` system. Golden Rules must cite real code evidence (file and line); do not invent generic best practices. For every `AGENTS.md` file created, ensure the corresponding `CLAUDE.md` links it via `@AGENTS.md`. Ensure **NO EMOJIS** are used to maximize context efficiency.
